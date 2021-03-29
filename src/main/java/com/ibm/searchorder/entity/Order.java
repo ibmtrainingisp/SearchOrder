@@ -1,18 +1,17 @@
-package com.ibm.searchorder;
+package com.ibm.searchorder.entity;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 
 public class Order {
-	@NotNull	//included valid dependency in pom.xml
+	@NotNull // included valid dependency in pom.xml
 	private String item;
 	@NotNull
 	private float price;
 	@Id
 	private String id;
-	
+
 	public String getId() {
 		return id;
 	}
@@ -26,7 +25,7 @@ public class Order {
 	}
 
 	public void setPrice(float price) {
-		if (price<=0) {
+		if (price <= 0) {
 			throw new IllegalArgumentException("Price cannot be negative");
 		}
 		this.price = price;
