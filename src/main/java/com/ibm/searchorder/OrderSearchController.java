@@ -22,15 +22,9 @@ public class OrderSearchController {
 		return orderService.getOrders();
 	}
 
-	/**
-	 * method to search for an order
-	 * 
-	 * @param orderId
-	 * @return zero or matching order
-	 */
 	@GetMapping("/order/{id}")
-	Optional<Order> getOrder(@PathVariable("id") String orderId) {
-		return orderService.getOrder(orderId);
+	Optional<Order> getOrderById(@PathVariable("id") String orderId) {
+		return orderService.getOrderById(orderId);
 	}
 
 }
